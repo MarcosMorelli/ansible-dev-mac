@@ -1,0 +1,22 @@
+---
+- hosts: all
+
+  vars_files:
+    - default.config.yml
+
+  environment:
+    PATH: "/opt/homebrew/bin:{{ ansible_env.PATH }}"
+
+  roles:
+   # - role: verify_become
+   # - role: basic_dirs
+   # - role: elliotweiser.osx-command-line-tools
+    - role: geerlingguy.mac.homebrew
+    - role: homebrew
+   # - role: configure_git
+   # - role: configure_iterm
+    - role: configure_macos
+   # - role: dock
+   # - role: remove-apple-apps
+   # - role: node
+   # - role: zsh

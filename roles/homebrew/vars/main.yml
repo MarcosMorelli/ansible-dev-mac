@@ -1,0 +1,3 @@
+---
+brew_exe_path: "{% if ansible_facts['architecture'] == 'arm64' %}/opt/homebrew/bin{% else %}/usr/local/bin{% endif %}"
+

@@ -1,0 +1,7 @@
+---
+- name: Install fonts
+  community.general.homebrew_cask:
+    path: "{{ brew_exe_path }}"
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('installed') }}"
+  with_items: "{{ homebrew_fonts }}"

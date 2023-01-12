@@ -1,0 +1,6 @@
+---
+- name: Create basic directories
+  file:
+    path: "{{ item.path }}"
+    state: "{{ item.state }}"
+  with_items: "{{ basic_dirs }}"

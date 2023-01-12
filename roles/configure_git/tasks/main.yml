@@ -1,0 +1,42 @@
+---
+- name: Git - name
+  community.general.git_config:
+    scope: global
+    name: user.name
+    value: '{{ git_name }}'
+
+- name: Git - email address
+  community.general.git_config:
+    scope: global
+    name: user.email
+    value: '{{ git_email }}'
+
+- name: Git - override default branch to match with GitHub defaults
+  community.general.git_config:
+    scope: global
+    name: init.defaultBranch
+    value: main
+
+- name: Git - default push current
+  community.general.git_config:
+    scope: global
+    name: push.default
+    value: current
+
+- name: Git - default rebase on pull
+  community.general.git_config:
+    scope: global
+    name: pull.rebase
+    value: 'true'
+
+- name: Git - sync tags with origin
+  community.general.git_config:
+    scope: global
+    name: remote.origin.tagOpt
+    value: '--tags'
+
+- name: Git - prune branches not on origin
+  community.general.git_config:
+    scope: global
+    name: remote.origin.prune
+    value: 'true'

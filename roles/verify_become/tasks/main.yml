@@ -1,0 +1,5 @@
+---
+- name: Verify password
+  become: yes
+  command: echo "sudo password verified"
+  changed_when: False

@@ -1,0 +1,8 @@
+---
+
+- name: Removing default AppStore apps
+  file:
+    path: "/Applications/{{ item }}.app"
+    state: absent
+  with_items: "{{ remove_apps }}"
+  become: true
